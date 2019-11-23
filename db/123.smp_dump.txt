@@ -1,0 +1,14 @@
+
+State Machine - |main|teclado2:keyboard|state
+Name state.debouncing state.coluna2 state.coluna1 state.000 state.debouncing2 
+state.000 0 0 0 0 0 
+state.coluna1 0 0 1 1 0 
+state.coluna2 0 1 0 1 0 
+state.debouncing 1 0 0 1 0 
+state.debouncing2 0 0 0 1 1 
+
+State Machine - |main|teclado2:keyboard|state_anterior
+Name state_anterior.coluna0 state_anterior.coluna2 state_anterior.coluna1 
+state_anterior.coluna0 0 0 0 
+state_anterior.coluna1 1 0 1 
+state_anterior.coluna2 1 1 0 

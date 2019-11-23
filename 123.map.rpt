@@ -1,0 +1,899 @@
+Analysis & Synthesis report for 123
+Tue Dec 11 16:03:50 2018
+Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |main|teclado2:keyboard|state
+  9. State Machine - |main|teclado2:keyboard|state_anterior
+ 10. User-Specified and Inferred Latches
+ 11. Registers Removed During Synthesis
+ 12. Removed Registers Triggering Further Register Optimizations
+ 13. General Register Statistics
+ 14. Inverted Register Statistics
+ 15. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 16. Parameter Settings for User Entity Instance: teclado2:keyboard
+ 17. Parameter Settings for Inferred Entity Instance: conversaodec_bin:cdb|lpm_divide:Mod0
+ 18. Parameter Settings for Inferred Entity Instance: conversaodec_bin:cdb|lpm_divide:Div0
+ 19. Parameter Settings for Inferred Entity Instance: conversaodec_bin:cdb|lpm_divide:Mod1
+ 20. Parameter Settings for Inferred Entity Instance: conversaodec_bin:cdb|lpm_divide:Div1
+ 21. Parameter Settings for Inferred Entity Instance: conversaodec_bin:cdb|lpm_divide:Mod2
+ 22. Parameter Settings for Inferred Entity Instance: conversaodec_bin:cdb|lpm_divide:Div2
+ 23. Parameter Settings for Inferred Entity Instance: conversaodec_bin:cdb|lpm_divide:Mod3
+ 24. Parameter Settings for Inferred Entity Instance: conversaobin_dec:cbd|lpm_mult:Mult1
+ 25. Parameter Settings for Inferred Entity Instance: conversaobin_dec:cbd|lpm_mult:Mult0
+ 26. lpm_mult Parameter Settings by Entity Instance
+ 27. Analysis & Synthesis Messages
+ 28. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2010 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                       ;
++------------------------------------+-----------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Tue Dec 11 16:03:50 2018         ;
+; Quartus II Version                 ; 9.1 Build 350 03/24/2010 SP 2 SJ Full Version ;
+; Revision Name                      ; 123                                           ;
+; Top-level Entity Name              ; main                                          ;
+; Family                             ; Cyclone IV E                                  ;
+; Total logic elements               ; 1,229                                         ;
+;     Total combinational functions  ; 1,147                                         ;
+;     Dedicated logic registers      ; 210                                           ;
+; Total registers                    ; 210                                           ;
+; Total pins                         ; 44                                            ;
+; Total virtual pins                 ; 0                                             ;
+; Total memory bits                  ; 0                                             ;
+; Embedded Multiplier 9-bit elements ; 0                                             ;
+; Total PLLs                         ; 0                                             ;
++------------------------------------+-----------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP4CE115F29C7      ;                    ;
+; Top-level entity name                                                      ; main               ; 123                ;
+; Family name                                                                ; Cyclone IV E       ; Stratix II         ;
+; Use Generated Physical Constraints File                                    ; Off                ;                    ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                 ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM Block Balancing                                                   ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; On                 ; On                 ;
+; Show Parameter Settings Tables in Synthesis Report                         ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     1 processor            ; 100.0%      ;
+;     2-4 processors         ;   0.0%      ;
++----------------------------+-------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                             ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                   ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------+
+; bcd.v                            ; yes             ; User Verilog HDL File        ; C:/Users/zsmn/Downloads/New folder/bcd.v                       ;
+; contador.v                       ; yes             ; User Verilog HDL File        ; C:/Users/zsmn/Downloads/New folder/contador.v                  ;
+; conversaobin_dec.v               ; yes             ; User Verilog HDL File        ; C:/Users/zsmn/Downloads/New folder/conversaobin_dec.v          ;
+; conversaodec_bin.v               ; yes             ; User Verilog HDL File        ; C:/Users/zsmn/Downloads/New folder/conversaodec_bin.v          ;
+; main.v                           ; yes             ; User Verilog HDL File        ; C:/Users/zsmn/Downloads/New folder/main.v                      ;
+; teclado2.v                       ; yes             ; User Verilog HDL File        ; C:/Users/zsmn/Downloads/New folder/teclado2.v                  ;
+; deg_clk.v                        ; yes             ; User Verilog HDL File        ; C:/Users/zsmn/Downloads/New folder/deg_clk.v                   ;
+; lpm_divide.tdf                   ; yes             ; Megafunction                 ; c:/altera/91sp2/quartus/libraries/megafunctions/lpm_divide.tdf ;
+; db/lpm_divide_5bm.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/zsmn/Downloads/New folder/db/lpm_divide_5bm.tdf       ;
+; db/sign_div_unsign_qlh.tdf       ; yes             ; Auto-Generated Megafunction  ; C:/Users/zsmn/Downloads/New folder/db/sign_div_unsign_qlh.tdf  ;
+; db/alt_u_div_87f.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/zsmn/Downloads/New folder/db/alt_u_div_87f.tdf        ;
+; db/add_sub_7pc.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/zsmn/Downloads/New folder/db/add_sub_7pc.tdf          ;
+; db/add_sub_8pc.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/zsmn/Downloads/New folder/db/add_sub_8pc.tdf          ;
+; db/lpm_divide_2jm.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/zsmn/Downloads/New folder/db/lpm_divide_2jm.tdf       ;
+; lpm_mult.tdf                     ; yes             ; Megafunction                 ; c:/altera/91sp2/quartus/libraries/megafunctions/lpm_mult.tdf   ;
+; multcore.tdf                     ; yes             ; Megafunction                 ; c:/altera/91sp2/quartus/libraries/megafunctions/multcore.tdf   ;
+; mpar_add.tdf                     ; yes             ; Megafunction                 ; c:/altera/91sp2/quartus/libraries/megafunctions/mpar_add.tdf   ;
+; altshift.tdf                     ; yes             ; Megafunction                 ; c:/altera/91sp2/quartus/libraries/megafunctions/altshift.tdf   ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------+
+
+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimated Total logic elements              ; 1,229     ;
+;                                             ;           ;
+; Total combinational functions               ; 1147      ;
+; Logic element usage by number of LUT inputs ;           ;
+;     -- 4 input functions                    ; 284       ;
+;     -- 3 input functions                    ; 307       ;
+;     -- <=2 input functions                  ; 556       ;
+;                                             ;           ;
+; Logic elements by mode                      ;           ;
+;     -- normal mode                          ; 787       ;
+;     -- arithmetic mode                      ; 360       ;
+;                                             ;           ;
+; Total registers                             ; 210       ;
+;     -- Dedicated logic registers            ; 210       ;
+;     -- I/O registers                        ; 0         ;
+;                                             ;           ;
+; I/O pins                                    ; 44        ;
+; Maximum fan-out node                        ; clk~input ;
+; Maximum fan-out                             ; 159       ;
+; Total fan-out                               ; 3677      ;
+; Average fan-out                             ; 2.54      ;
++---------------------------------------------+-----------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                               ;
++-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node                ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                        ; Library Name ;
++-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------------------+--------------+
+; |main                                     ; 1147 (17)         ; 210 (2)      ; 0           ; 0            ; 0       ; 0         ; 44   ; 0            ; |main                                                                                                                      ; work         ;
+;    |bcd:a|                                ; 28 (28)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|bcd:a                                                                                                                ;              ;
+;    |contador:cnt|                         ; 115 (115)         ; 104 (104)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|contador:cnt                                                                                                         ;              ;
+;    |conversaobin_dec:cbd|                 ; 48 (33)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|conversaobin_dec:cbd                                                                                                 ;              ;
+;       |lpm_mult:Mult0|                    ; 6 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|conversaobin_dec:cbd|lpm_mult:Mult0                                                                                  ;              ;
+;          |multcore:mult_core|             ; 6 (6)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|conversaobin_dec:cbd|lpm_mult:Mult0|multcore:mult_core                                                               ;              ;
+;       |lpm_mult:Mult1|                    ; 9 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|conversaobin_dec:cbd|lpm_mult:Mult1                                                                                  ;              ;
+;          |multcore:mult_core|             ; 9 (9)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|conversaobin_dec:cbd|lpm_mult:Mult1|multcore:mult_core                                                               ;              ;
+;    |conversaodec_bin:cdb|                 ; 825 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|conversaodec_bin:cdb                                                                                                 ;              ;
+;       |lpm_divide:Div0|                   ; 160 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|conversaodec_bin:cdb|lpm_divide:Div0                                                                                 ;              ;
+;          |lpm_divide_2jm:auto_generated|  ; 160 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|conversaodec_bin:cdb|lpm_divide:Div0|lpm_divide_2jm:auto_generated                                                   ;              ;
+;             |sign_div_unsign_qlh:divider| ; 160 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|conversaodec_bin:cdb|lpm_divide:Div0|lpm_divide_2jm:auto_generated|sign_div_unsign_qlh:divider                       ;              ;
+;                |alt_u_div_87f:divider|    ; 160 (160)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|conversaodec_bin:cdb|lpm_divide:Div0|lpm_divide_2jm:auto_generated|sign_div_unsign_qlh:divider|alt_u_div_87f:divider ;              ;
+;       |lpm_divide:Div1|                   ; 131 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|conversaodec_bin:cdb|lpm_divide:Div1                                                                                 ;              ;
+;          |lpm_divide_2jm:auto_generated|  ; 131 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|conversaodec_bin:cdb|lpm_divide:Div1|lpm_divide_2jm:auto_generated                                                   ;              ;
+;             |sign_div_unsign_qlh:divider| ; 131 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|conversaodec_bin:cdb|lpm_divide:Div1|lpm_divide_2jm:auto_generated|sign_div_unsign_qlh:divider                       ;              ;
+;                |alt_u_div_87f:divider|    ; 131 (131)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|conversaodec_bin:cdb|lpm_divide:Div1|lpm_divide_2jm:auto_generated|sign_div_unsign_qlh:divider|alt_u_div_87f:divider ;              ;
+;       |lpm_divide:Div2|                   ; 89 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|conversaodec_bin:cdb|lpm_divide:Div2                                                                                 ;              ;
+;          |lpm_divide_2jm:auto_generated|  ; 89 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|conversaodec_bin:cdb|lpm_divide:Div2|lpm_divide_2jm:auto_generated                                                   ;              ;
+;             |sign_div_unsign_qlh:divider| ; 89 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|conversaodec_bin:cdb|lpm_divide:Div2|lpm_divide_2jm:auto_generated|sign_div_unsign_qlh:divider                       ;              ;
+;                |alt_u_div_87f:divider|    ; 89 (89)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|conversaodec_bin:cdb|lpm_divide:Div2|lpm_divide_2jm:auto_generated|sign_div_unsign_qlh:divider|alt_u_div_87f:divider ;              ;
+;       |lpm_divide:Mod0|                   ; 163 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|conversaodec_bin:cdb|lpm_divide:Mod0                                                                                 ;              ;
+;          |lpm_divide_5bm:auto_generated|  ; 163 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|conversaodec_bin:cdb|lpm_divide:Mod0|lpm_divide_5bm:auto_generated                                                   ;              ;
+;             |sign_div_unsign_qlh:divider| ; 163 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|conversaodec_bin:cdb|lpm_divide:Mod0|lpm_divide_5bm:auto_generated|sign_div_unsign_qlh:divider                       ;              ;
+;                |alt_u_div_87f:divider|    ; 163 (163)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|conversaodec_bin:cdb|lpm_divide:Mod0|lpm_divide_5bm:auto_generated|sign_div_unsign_qlh:divider|alt_u_div_87f:divider ;              ;
+;       |lpm_divide:Mod1|                   ; 136 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|conversaodec_bin:cdb|lpm_divide:Mod1                                                                                 ;              ;
+;          |lpm_divide_5bm:auto_generated|  ; 136 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|conversaodec_bin:cdb|lpm_divide:Mod1|lpm_divide_5bm:auto_generated                                                   ;              ;
+;             |sign_div_unsign_qlh:divider| ; 136 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|conversaodec_bin:cdb|lpm_divide:Mod1|lpm_divide_5bm:auto_generated|sign_div_unsign_qlh:divider                       ;              ;
+;                |alt_u_div_87f:divider|    ; 136 (136)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|conversaodec_bin:cdb|lpm_divide:Mod1|lpm_divide_5bm:auto_generated|sign_div_unsign_qlh:divider|alt_u_div_87f:divider ;              ;
+;       |lpm_divide:Mod2|                   ; 94 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|conversaodec_bin:cdb|lpm_divide:Mod2                                                                                 ;              ;
+;          |lpm_divide_5bm:auto_generated|  ; 94 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|conversaodec_bin:cdb|lpm_divide:Mod2|lpm_divide_5bm:auto_generated                                                   ;              ;
+;             |sign_div_unsign_qlh:divider| ; 94 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|conversaodec_bin:cdb|lpm_divide:Mod2|lpm_divide_5bm:auto_generated|sign_div_unsign_qlh:divider                       ;              ;
+;                |alt_u_div_87f:divider|    ; 94 (94)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|conversaodec_bin:cdb|lpm_divide:Mod2|lpm_divide_5bm:auto_generated|sign_div_unsign_qlh:divider|alt_u_div_87f:divider ;              ;
+;       |lpm_divide:Mod3|                   ; 52 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|conversaodec_bin:cdb|lpm_divide:Mod3                                                                                 ;              ;
+;          |lpm_divide_5bm:auto_generated|  ; 52 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|conversaodec_bin:cdb|lpm_divide:Mod3|lpm_divide_5bm:auto_generated                                                   ;              ;
+;             |sign_div_unsign_qlh:divider| ; 52 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|conversaodec_bin:cdb|lpm_divide:Mod3|lpm_divide_5bm:auto_generated|sign_div_unsign_qlh:divider                       ;              ;
+;                |alt_u_div_87f:divider|    ; 52 (52)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|conversaodec_bin:cdb|lpm_divide:Mod3|lpm_divide_5bm:auto_generated|sign_div_unsign_qlh:divider|alt_u_div_87f:divider ;              ;
+;    |deg_clk:comb_13|                      ; 44 (44)           ; 55 (55)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|deg_clk:comb_13                                                                                                      ;              ;
+;    |teclado2:keyboard|                    ; 70 (70)           ; 49 (49)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|teclado2:keyboard                                                                                                    ;              ;
++-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++------------------------------------------------------------------------------------------------------+
+; State Machine - |main|teclado2:keyboard|state                                                        ;
++-------------------+------------------+---------------+---------------+-----------+-------------------+
+; Name              ; state.debouncing ; state.coluna2 ; state.coluna1 ; state.000 ; state.debouncing2 ;
++-------------------+------------------+---------------+---------------+-----------+-------------------+
+; state.000         ; 0                ; 0             ; 0             ; 0         ; 0                 ;
+; state.coluna1     ; 0                ; 0             ; 1             ; 1         ; 0                 ;
+; state.coluna2     ; 0                ; 1             ; 0             ; 1         ; 0                 ;
+; state.debouncing  ; 1                ; 0             ; 0             ; 1         ; 0                 ;
+; state.debouncing2 ; 0                ; 0             ; 0             ; 1         ; 1                 ;
++-------------------+------------------+---------------+---------------+-----------+-------------------+
+
+
+Encoding Type:  One-Hot
++---------------------------------------------------------------------------------------------------+
+; State Machine - |main|teclado2:keyboard|state_anterior                                            ;
++------------------------+------------------------+------------------------+------------------------+
+; Name                   ; state_anterior.coluna0 ; state_anterior.coluna2 ; state_anterior.coluna1 ;
++------------------------+------------------------+------------------------+------------------------+
+; state_anterior.coluna0 ; 0                      ; 0                      ; 0                      ;
+; state_anterior.coluna1 ; 1                      ; 0                      ; 1                      ;
+; state_anterior.coluna2 ; 1                      ; 1                      ; 0                      ;
++------------------------+------------------------+------------------------+------------------------+
+
+
++--------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                    ;
++-----------------------------------------------------+-------------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal     ; Free of Timing Hazards ;
++-----------------------------------------------------+-------------------------+------------------------+
+; registrador_final[0]                                ; teclado2:keyboard|salve ; yes                    ;
+; registrador_final[1]                                ; teclado2:keyboard|salve ; yes                    ;
+; registrador_final[2]                                ; teclado2:keyboard|salve ; yes                    ;
+; registrador_final[3]                                ; teclado2:keyboard|salve ; yes                    ;
+; registrador_final[14]                               ; teclado2:keyboard|salve ; yes                    ;
+; registrador_final[13]                               ; teclado2:keyboard|salve ; yes                    ;
+; registrador_final[12]                               ; teclado2:keyboard|salve ; yes                    ;
+; registrador_final[11]                               ; teclado2:keyboard|salve ; yes                    ;
+; registrador_final[10]                               ; teclado2:keyboard|salve ; yes                    ;
+; registrador_final[9]                                ; teclado2:keyboard|salve ; yes                    ;
+; registrador_final[8]                                ; teclado2:keyboard|salve ; yes                    ;
+; registrador_final[7]                                ; teclado2:keyboard|salve ; yes                    ;
+; registrador_final[6]                                ; teclado2:keyboard|salve ; yes                    ;
+; registrador_final[5]                                ; teclado2:keyboard|salve ; yes                    ;
+; registrador_final[4]                                ; teclado2:keyboard|salve ; yes                    ;
+; Number of user-specified and inferred latches = 15  ;                         ;                        ;
++-----------------------------------------------------+-------------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++---------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                              ;
++----------------------------------------+----------------------------------------+
+; Register name                          ; Reason for Removal                     ;
++----------------------------------------+----------------------------------------+
+; teclado2:keyboard|out[0]               ; Stuck at VCC due to stuck port data_in ;
+; contador:cnt|tim1                      ; Merged with contador:cnt|tim2          ;
+; teclado2:keyboard|count_aux[23..26]    ; Stuck at GND due to stuck port data_in ;
+; teclado2:keyboard|count[24..26]        ; Stuck at GND due to stuck port data_in ;
+; teclado2:keyboard|count_aux[20..22]    ; Stuck at GND due to stuck port data_in ;
+; teclado2:keyboard|count[21..23]        ; Stuck at GND due to stuck port data_in ;
+; teclado2:keyboard|state~10             ; Lost fanout                            ;
+; teclado2:keyboard|state~11             ; Lost fanout                            ;
+; teclado2:keyboard|state_anterior~4     ; Lost fanout                            ;
+; teclado2:keyboard|count_aux[0..19]     ; Stuck at GND due to stuck port data_in ;
+; teclado2:keyboard|count[1..20]         ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 58 ;                                        ;
++----------------------------------------+----------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                        ;
++---------------------------------+---------------------------+--------------------------------------------------------------------------------------+
+; Register name                   ; Reason for Removal        ; Registers Removed due to This Register                                               ;
++---------------------------------+---------------------------+--------------------------------------------------------------------------------------+
+; teclado2:keyboard|count_aux[26] ; Stuck at GND              ; teclado2:keyboard|count[26], teclado2:keyboard|count[25],                            ;
+;                                 ; due to stuck port data_in ; teclado2:keyboard|count[24], teclado2:keyboard|count_aux[22],                        ;
+;                                 ;                           ; teclado2:keyboard|count_aux[21], teclado2:keyboard|count_aux[20],                    ;
+;                                 ;                           ; teclado2:keyboard|count[23], teclado2:keyboard|count[22],                            ;
+;                                 ;                           ; teclado2:keyboard|count[21], teclado2:keyboard|count_aux[0],                         ;
+;                                 ;                           ; teclado2:keyboard|count_aux[1], teclado2:keyboard|count_aux[2],                      ;
+;                                 ;                           ; teclado2:keyboard|count_aux[3], teclado2:keyboard|count_aux[4],                      ;
+;                                 ;                           ; teclado2:keyboard|count_aux[5], teclado2:keyboard|count_aux[6],                      ;
+;                                 ;                           ; teclado2:keyboard|count_aux[7], teclado2:keyboard|count_aux[8],                      ;
+;                                 ;                           ; teclado2:keyboard|count_aux[9], teclado2:keyboard|count_aux[10],                     ;
+;                                 ;                           ; teclado2:keyboard|count_aux[11], teclado2:keyboard|count_aux[12],                    ;
+;                                 ;                           ; teclado2:keyboard|count_aux[13], teclado2:keyboard|count_aux[14],                    ;
+;                                 ;                           ; teclado2:keyboard|count_aux[15], teclado2:keyboard|count_aux[16],                    ;
+;                                 ;                           ; teclado2:keyboard|count_aux[17], teclado2:keyboard|count_aux[18],                    ;
+;                                 ;                           ; teclado2:keyboard|count_aux[19], teclado2:keyboard|count[1],                         ;
+;                                 ;                           ; teclado2:keyboard|count[2], teclado2:keyboard|count[3], teclado2:keyboard|count[4],  ;
+;                                 ;                           ; teclado2:keyboard|count[5], teclado2:keyboard|count[6], teclado2:keyboard|count[7],  ;
+;                                 ;                           ; teclado2:keyboard|count[8], teclado2:keyboard|count[9], teclado2:keyboard|count[10], ;
+;                                 ;                           ; teclado2:keyboard|count[11], teclado2:keyboard|count[12],                            ;
+;                                 ;                           ; teclado2:keyboard|count[13], teclado2:keyboard|count[14],                            ;
+;                                 ;                           ; teclado2:keyboard|count[15], teclado2:keyboard|count[16],                            ;
+;                                 ;                           ; teclado2:keyboard|count[17], teclado2:keyboard|count[18],                            ;
+;                                 ;                           ; teclado2:keyboard|count[19], teclado2:keyboard|count[20]                             ;
++---------------------------------+---------------------------+--------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 210   ;
+; Number of registers using Synchronous Clear  ; 57    ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 133   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; contador:cnt|flag_aux                  ; 1       ;
+; Total number of inverted registers = 1 ;         ;
++----------------------------------------+---------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                          ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------+
+; 3:1                ; 54 bits   ; 108 LEs       ; 54 LEs               ; 54 LEs                 ; Yes        ; |main|teclado2:keyboard|count_aux[23]     ;
+; 4:1                ; 26 bits   ; 52 LEs        ; 26 LEs               ; 26 LEs                 ; Yes        ; |main|contador:cnt|cont[17]               ;
+; 4:1                ; 15 bits   ; 30 LEs        ; 30 LEs               ; 0 LEs                  ; Yes        ; |main|contador:cnt|aux[2]                 ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 0 LEs                ; 24 LEs                 ; Yes        ; |main|teclado2:keyboard|registrador_w[0]  ;
+; 6:1                ; 16 bits   ; 64 LEs        ; 16 LEs               ; 48 LEs                 ; Yes        ; |main|teclado2:keyboard|delicia[4]        ;
+; 6:1                ; 15 bits   ; 60 LEs        ; 30 LEs               ; 30 LEs                 ; Yes        ; |main|contador:cnt|segundos[3]            ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 0 LEs                ; 24 LEs                 ; Yes        ; |main|teclado2:keyboard|registrador_w[11] ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------+
+
+
++----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: teclado2:keyboard ;
++----------------+-------+---------------------------------------+
+; Parameter Name ; Value ; Type                                  ;
++----------------+-------+---------------------------------------+
+; coluna0        ; 000   ; Unsigned Binary                       ;
+; coluna1        ; 001   ; Unsigned Binary                       ;
+; coluna2        ; 010   ; Unsigned Binary                       ;
+; debouncing     ; 011   ; Unsigned Binary                       ;
+; debouncing2    ; 100   ; Unsigned Binary                       ;
+; tecla_1        ; 1110  ; Unsigned Binary                       ;
+; tecla_4        ; 1101  ; Unsigned Binary                       ;
+; tecla_7        ; 1011  ; Unsigned Binary                       ;
+; tecla_esp      ; 0111  ; Unsigned Binary                       ;
+; tecla_9        ; 1011  ; Unsigned Binary                       ;
+; tecla_6        ; 1101  ; Unsigned Binary                       ;
+; tecla_3        ; 1110  ; Unsigned Binary                       ;
+; tecla_0        ; 0111  ; Unsigned Binary                       ;
+; tecla_8        ; 1011  ; Unsigned Binary                       ;
+; tecla_5        ; 1101  ; Unsigned Binary                       ;
+; tecla_2        ; 1110  ; Unsigned Binary                       ;
++----------------+-------+---------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: conversaodec_bin:cdb|lpm_divide:Mod0 ;
++------------------------+----------------+---------------------------------------------+
+; Parameter Name         ; Value          ; Type                                        ;
++------------------------+----------------+---------------------------------------------+
+; LPM_WIDTHN             ; 16             ; Untyped                                     ;
+; LPM_WIDTHD             ; 4              ; Untyped                                     ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                     ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                     ;
+; LPM_PIPELINE           ; 0              ; Untyped                                     ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                     ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                     ;
+; CBXI_PARAMETER         ; lpm_divide_5bm ; Untyped                                     ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                     ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                     ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                  ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                              ;
++------------------------+----------------+---------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: conversaodec_bin:cdb|lpm_divide:Div0 ;
++------------------------+----------------+---------------------------------------------+
+; Parameter Name         ; Value          ; Type                                        ;
++------------------------+----------------+---------------------------------------------+
+; LPM_WIDTHN             ; 16             ; Untyped                                     ;
+; LPM_WIDTHD             ; 4              ; Untyped                                     ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                     ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                     ;
+; LPM_PIPELINE           ; 0              ; Untyped                                     ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                     ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                     ;
+; CBXI_PARAMETER         ; lpm_divide_2jm ; Untyped                                     ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                     ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                     ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                  ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                              ;
++------------------------+----------------+---------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: conversaodec_bin:cdb|lpm_divide:Mod1 ;
++------------------------+----------------+---------------------------------------------+
+; Parameter Name         ; Value          ; Type                                        ;
++------------------------+----------------+---------------------------------------------+
+; LPM_WIDTHN             ; 16             ; Untyped                                     ;
+; LPM_WIDTHD             ; 4              ; Untyped                                     ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                     ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                     ;
+; LPM_PIPELINE           ; 0              ; Untyped                                     ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                     ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                     ;
+; CBXI_PARAMETER         ; lpm_divide_5bm ; Untyped                                     ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                     ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                     ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                  ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                              ;
++------------------------+----------------+---------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: conversaodec_bin:cdb|lpm_divide:Div1 ;
++------------------------+----------------+---------------------------------------------+
+; Parameter Name         ; Value          ; Type                                        ;
++------------------------+----------------+---------------------------------------------+
+; LPM_WIDTHN             ; 16             ; Untyped                                     ;
+; LPM_WIDTHD             ; 4              ; Untyped                                     ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                     ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                     ;
+; LPM_PIPELINE           ; 0              ; Untyped                                     ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                     ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                     ;
+; CBXI_PARAMETER         ; lpm_divide_2jm ; Untyped                                     ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                     ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                     ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                  ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                              ;
++------------------------+----------------+---------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: conversaodec_bin:cdb|lpm_divide:Mod2 ;
++------------------------+----------------+---------------------------------------------+
+; Parameter Name         ; Value          ; Type                                        ;
++------------------------+----------------+---------------------------------------------+
+; LPM_WIDTHN             ; 16             ; Untyped                                     ;
+; LPM_WIDTHD             ; 4              ; Untyped                                     ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                     ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                     ;
+; LPM_PIPELINE           ; 0              ; Untyped                                     ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                     ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                     ;
+; CBXI_PARAMETER         ; lpm_divide_5bm ; Untyped                                     ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                     ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                     ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                  ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                              ;
++------------------------+----------------+---------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: conversaodec_bin:cdb|lpm_divide:Div2 ;
++------------------------+----------------+---------------------------------------------+
+; Parameter Name         ; Value          ; Type                                        ;
++------------------------+----------------+---------------------------------------------+
+; LPM_WIDTHN             ; 16             ; Untyped                                     ;
+; LPM_WIDTHD             ; 4              ; Untyped                                     ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                     ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                     ;
+; LPM_PIPELINE           ; 0              ; Untyped                                     ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                     ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                     ;
+; CBXI_PARAMETER         ; lpm_divide_2jm ; Untyped                                     ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                     ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                     ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                  ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                              ;
++------------------------+----------------+---------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: conversaodec_bin:cdb|lpm_divide:Mod3 ;
++------------------------+----------------+---------------------------------------------+
+; Parameter Name         ; Value          ; Type                                        ;
++------------------------+----------------+---------------------------------------------+
+; LPM_WIDTHN             ; 16             ; Untyped                                     ;
+; LPM_WIDTHD             ; 4              ; Untyped                                     ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                     ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                     ;
+; LPM_PIPELINE           ; 0              ; Untyped                                     ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                     ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                     ;
+; CBXI_PARAMETER         ; lpm_divide_5bm ; Untyped                                     ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                     ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                     ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                  ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                              ;
++------------------------+----------------+---------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: conversaobin_dec:cbd|lpm_mult:Mult1 ;
++------------------------------------------------+--------------+----------------------+
+; Parameter Name                                 ; Value        ; Type                 ;
++------------------------------------------------+--------------+----------------------+
+; AUTO_CARRY_CHAINS                              ; ON           ; AUTO_CARRY           ;
+; IGNORE_CARRY_BUFFERS                           ; OFF          ; IGNORE_CARRY         ;
+; AUTO_CASCADE_CHAINS                            ; ON           ; AUTO_CASCADE         ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF          ; IGNORE_CASCADE       ;
+; LPM_WIDTHA                                     ; 4            ; Untyped              ;
+; LPM_WIDTHB                                     ; 10           ; Untyped              ;
+; LPM_WIDTHP                                     ; 14           ; Untyped              ;
+; LPM_WIDTHR                                     ; 14           ; Untyped              ;
+; LPM_WIDTHS                                     ; 1            ; Untyped              ;
+; LPM_REPRESENTATION                             ; UNSIGNED     ; Untyped              ;
+; LPM_PIPELINE                                   ; 0            ; Untyped              ;
+; LATENCY                                        ; 0            ; Untyped              ;
+; INPUT_A_IS_CONSTANT                            ; NO           ; Untyped              ;
+; INPUT_B_IS_CONSTANT                            ; YES          ; Untyped              ;
+; USE_EAB                                        ; OFF          ; Untyped              ;
+; MAXIMIZE_SPEED                                 ; 6            ; Untyped              ;
+; DEVICE_FAMILY                                  ; Cyclone IV E ; Untyped              ;
+; CARRY_CHAIN                                    ; MANUAL       ; Untyped              ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT          ; TECH_MAPPER_APEX20K  ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO         ; Untyped              ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0            ; Untyped              ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0            ; Untyped              ;
+; CBXI_PARAMETER                                 ; NOTHING      ; Untyped              ;
+; INPUT_A_FIXED_VALUE                            ; Bx           ; Untyped              ;
+; INPUT_B_FIXED_VALUE                            ; Bx           ; Untyped              ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF          ; Untyped              ;
++------------------------------------------------+--------------+----------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: conversaobin_dec:cbd|lpm_mult:Mult0 ;
++------------------------------------------------+--------------+----------------------+
+; Parameter Name                                 ; Value        ; Type                 ;
++------------------------------------------------+--------------+----------------------+
+; AUTO_CARRY_CHAINS                              ; ON           ; AUTO_CARRY           ;
+; IGNORE_CARRY_BUFFERS                           ; OFF          ; IGNORE_CARRY         ;
+; AUTO_CASCADE_CHAINS                            ; ON           ; AUTO_CASCADE         ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF          ; IGNORE_CASCADE       ;
+; LPM_WIDTHA                                     ; 4            ; Untyped              ;
+; LPM_WIDTHB                                     ; 7            ; Untyped              ;
+; LPM_WIDTHP                                     ; 11           ; Untyped              ;
+; LPM_WIDTHR                                     ; 11           ; Untyped              ;
+; LPM_WIDTHS                                     ; 1            ; Untyped              ;
+; LPM_REPRESENTATION                             ; UNSIGNED     ; Untyped              ;
+; LPM_PIPELINE                                   ; 0            ; Untyped              ;
+; LATENCY                                        ; 0            ; Untyped              ;
+; INPUT_A_IS_CONSTANT                            ; NO           ; Untyped              ;
+; INPUT_B_IS_CONSTANT                            ; YES          ; Untyped              ;
+; USE_EAB                                        ; OFF          ; Untyped              ;
+; MAXIMIZE_SPEED                                 ; 5            ; Untyped              ;
+; DEVICE_FAMILY                                  ; Cyclone IV E ; Untyped              ;
+; CARRY_CHAIN                                    ; MANUAL       ; Untyped              ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT          ; TECH_MAPPER_APEX20K  ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO         ; Untyped              ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0            ; Untyped              ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0            ; Untyped              ;
+; CBXI_PARAMETER                                 ; NOTHING      ; Untyped              ;
+; INPUT_A_FIXED_VALUE                            ; Bx           ; Untyped              ;
+; INPUT_B_FIXED_VALUE                            ; Bx           ; Untyped              ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF          ; Untyped              ;
++------------------------------------------------+--------------+----------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------+
+; lpm_mult Parameter Settings by Entity Instance                              ;
++---------------------------------------+-------------------------------------+
+; Name                                  ; Value                               ;
++---------------------------------------+-------------------------------------+
+; Number of entity instances            ; 2                                   ;
+; Entity Instance                       ; conversaobin_dec:cbd|lpm_mult:Mult1 ;
+;     -- LPM_WIDTHA                     ; 4                                   ;
+;     -- LPM_WIDTHB                     ; 10                                  ;
+;     -- LPM_WIDTHP                     ; 14                                  ;
+;     -- LPM_REPRESENTATION             ; UNSIGNED                            ;
+;     -- INPUT_A_IS_CONSTANT            ; NO                                  ;
+;     -- INPUT_B_IS_CONSTANT            ; YES                                 ;
+;     -- USE_EAB                        ; OFF                                 ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                                ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx                                  ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx                                  ;
+; Entity Instance                       ; conversaobin_dec:cbd|lpm_mult:Mult0 ;
+;     -- LPM_WIDTHA                     ; 4                                   ;
+;     -- LPM_WIDTHB                     ; 7                                   ;
+;     -- LPM_WIDTHP                     ; 11                                  ;
+;     -- LPM_REPRESENTATION             ; UNSIGNED                            ;
+;     -- INPUT_A_IS_CONSTANT            ; NO                                  ;
+;     -- INPUT_B_IS_CONSTANT            ; YES                                 ;
+;     -- USE_EAB                        ; OFF                                 ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                                ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx                                  ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx                                  ;
++---------------------------------------+-------------------------------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Analysis & Synthesis
+    Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Full Version
+    Info: Processing started: Tue Dec 11 16:03:44 2018
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off 123 -c 123
+Info: Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info: Found 1 design units, including 1 entities, in source file teclado.v
+    Info: Found entity 1: teclado
+Info: Found 1 design units, including 1 entities, in source file deboucing.v
+    Info: Found entity 1: deboucing
+Info: Found 1 design units, including 1 entities, in source file bcd.v
+    Info: Found entity 1: bcd
+Info: Found 1 design units, including 1 entities, in source file contador.v
+    Info: Found entity 1: contador
+Info: Found 1 design units, including 1 entities, in source file conversaobin_dec.v
+    Info: Found entity 1: conversaobin_dec
+Info: Found 1 design units, including 1 entities, in source file conversaodec_bin.v
+    Info: Found entity 1: conversaodec_bin
+Info: Found 1 design units, including 1 entities, in source file main.v
+    Info: Found entity 1: main
+Info: Found 1 design units, including 1 entities, in source file teclado2.v
+    Info: Found entity 1: teclado2
+Info: Found 1 design units, including 1 entities, in source file deg_clk.v
+    Info: Found entity 1: deg_clk
+Critical Warning (10846): Verilog HDL Instantiation warning at main.v(58): instance has no name
+Info: Elaborating entity "main" for the top level hierarchy
+Warning (10036): Verilog HDL or VHDL warning at main.v(28): object "GAMB" assigned a value but never read
+Warning (10240): Verilog HDL Always Construct warning at main.v(64): inferring latch(es) for variable "registrador_final", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "registrador_final[0]" at main.v(64)
+Info (10041): Inferred latch for "registrador_final[1]" at main.v(64)
+Info (10041): Inferred latch for "registrador_final[2]" at main.v(64)
+Info (10041): Inferred latch for "registrador_final[3]" at main.v(64)
+Info (10041): Inferred latch for "registrador_final[4]" at main.v(64)
+Info (10041): Inferred latch for "registrador_final[5]" at main.v(64)
+Info (10041): Inferred latch for "registrador_final[6]" at main.v(64)
+Info (10041): Inferred latch for "registrador_final[7]" at main.v(64)
+Info (10041): Inferred latch for "registrador_final[8]" at main.v(64)
+Info (10041): Inferred latch for "registrador_final[9]" at main.v(64)
+Info (10041): Inferred latch for "registrador_final[10]" at main.v(64)
+Info (10041): Inferred latch for "registrador_final[11]" at main.v(64)
+Info (10041): Inferred latch for "registrador_final[12]" at main.v(64)
+Info (10041): Inferred latch for "registrador_final[13]" at main.v(64)
+Info (10041): Inferred latch for "registrador_final[14]" at main.v(64)
+Info (10041): Inferred latch for "registrador_final[15]" at main.v(64)
+Info: Elaborating entity "deg_clk" for hierarchy "deg_clk:comb_13"
+Warning (10230): Verilog HDL assignment warning at deg_clk.v(23): truncated value with size 32 to match size of target (27)
+Info: Elaborating entity "teclado2" for hierarchy "teclado2:keyboard"
+Warning (10230): Verilog HDL assignment warning at teclado2.v(116): truncated value with size 32 to match size of target (27)
+Warning (10230): Verilog HDL assignment warning at teclado2.v(143): truncated value with size 32 to match size of target (27)
+Info: Elaborating entity "conversaobin_dec" for hierarchy "conversaobin_dec:cbd"
+Warning (10230): Verilog HDL assignment warning at conversaobin_dec.v(24): truncated value with size 32 to match size of target (16)
+Info: Elaborating entity "contador" for hierarchy "contador:cnt"
+Warning (10230): Verilog HDL assignment warning at contador.v(84): truncated value with size 32 to match size of target (26)
+Warning (10230): Verilog HDL assignment warning at contador.v(91): truncated value with size 32 to match size of target (16)
+Warning (10230): Verilog HDL assignment warning at contador.v(95): truncated value with size 32 to match size of target (16)
+Info: Elaborating entity "conversaodec_bin" for hierarchy "conversaodec_bin:cdb"
+Warning (10230): Verilog HDL assignment warning at conversaodec_bin.v(28): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at conversaodec_bin.v(29): truncated value with size 32 to match size of target (16)
+Warning (10230): Verilog HDL assignment warning at conversaodec_bin.v(32): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at conversaodec_bin.v(33): truncated value with size 32 to match size of target (16)
+Warning (10230): Verilog HDL assignment warning at conversaodec_bin.v(36): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at conversaodec_bin.v(37): truncated value with size 32 to match size of target (16)
+Warning (10230): Verilog HDL assignment warning at conversaodec_bin.v(38): truncated value with size 32 to match size of target (4)
+Info: Elaborating entity "bcd" for hierarchy "bcd:a"
+Info: Inferred 9 megafunctions from design logic
+    Info: Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "conversaodec_bin:cdb|Mod0"
+    Info: Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "conversaodec_bin:cdb|Div0"
+    Info: Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "conversaodec_bin:cdb|Mod1"
+    Info: Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "conversaodec_bin:cdb|Div1"
+    Info: Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "conversaodec_bin:cdb|Mod2"
+    Info: Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "conversaodec_bin:cdb|Div2"
+    Info: Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "conversaodec_bin:cdb|Mod3"
+    Info: Inferred multiplier megafunction ("lpm_mult") from the following logic: "conversaobin_dec:cbd|Mult1"
+    Info: Inferred multiplier megafunction ("lpm_mult") from the following logic: "conversaobin_dec:cbd|Mult0"
+Info: Elaborated megafunction instantiation "conversaodec_bin:cdb|lpm_divide:Mod0"
+Info: Instantiated megafunction "conversaodec_bin:cdb|lpm_divide:Mod0" with the following parameter:
+    Info: Parameter "LPM_WIDTHN" = "16"
+    Info: Parameter "LPM_WIDTHD" = "4"
+    Info: Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info: Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info: Found 1 design units, including 1 entities, in source file db/lpm_divide_5bm.tdf
+    Info: Found entity 1: lpm_divide_5bm
+Info: Found 1 design units, including 1 entities, in source file db/sign_div_unsign_qlh.tdf
+    Info: Found entity 1: sign_div_unsign_qlh
+Info: Found 1 design units, including 1 entities, in source file db/alt_u_div_87f.tdf
+    Info: Found entity 1: alt_u_div_87f
+Info: Found 1 design units, including 1 entities, in source file db/add_sub_7pc.tdf
+    Info: Found entity 1: add_sub_7pc
+Info: Found 1 design units, including 1 entities, in source file db/add_sub_8pc.tdf
+    Info: Found entity 1: add_sub_8pc
+Info: Elaborated megafunction instantiation "conversaodec_bin:cdb|lpm_divide:Div0"
+Info: Instantiated megafunction "conversaodec_bin:cdb|lpm_divide:Div0" with the following parameter:
+    Info: Parameter "LPM_WIDTHN" = "16"
+    Info: Parameter "LPM_WIDTHD" = "4"
+    Info: Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info: Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info: Found 1 design units, including 1 entities, in source file db/lpm_divide_2jm.tdf
+    Info: Found entity 1: lpm_divide_2jm
+Info: Elaborated megafunction instantiation "conversaobin_dec:cbd|lpm_mult:Mult1"
+Info: Instantiated megafunction "conversaobin_dec:cbd|lpm_mult:Mult1" with the following parameter:
+    Info: Parameter "LPM_WIDTHA" = "4"
+    Info: Parameter "LPM_WIDTHB" = "10"
+    Info: Parameter "LPM_WIDTHP" = "14"
+    Info: Parameter "LPM_WIDTHR" = "14"
+    Info: Parameter "LPM_WIDTHS" = "1"
+    Info: Parameter "LPM_REPRESENTATION" = "UNSIGNED"
+    Info: Parameter "INPUT_A_IS_CONSTANT" = "NO"
+    Info: Parameter "INPUT_B_IS_CONSTANT" = "YES"
+    Info: Parameter "MAXIMIZE_SPEED" = "6"
+Info: Elaborated megafunction instantiation "conversaobin_dec:cbd|lpm_mult:Mult1|multcore:mult_core", which is child of megafunction instantiation "conversaobin_dec:cbd|lpm_mult:Mult1"
+Info: Elaborated megafunction instantiation "conversaobin_dec:cbd|lpm_mult:Mult1|multcore:mult_core|mpar_add:padder", which is child of megafunction instantiation "conversaobin_dec:cbd|lpm_mult:Mult1"
+Info: Elaborated megafunction instantiation "conversaobin_dec:cbd|lpm_mult:Mult1|altshift:external_latency_ffs", which is child of megafunction instantiation "conversaobin_dec:cbd|lpm_mult:Mult1"
+Info: Elaborated megafunction instantiation "conversaobin_dec:cbd|lpm_mult:Mult0"
+Info: Instantiated megafunction "conversaobin_dec:cbd|lpm_mult:Mult0" with the following parameter:
+    Info: Parameter "LPM_WIDTHA" = "4"
+    Info: Parameter "LPM_WIDTHB" = "7"
+    Info: Parameter "LPM_WIDTHP" = "11"
+    Info: Parameter "LPM_WIDTHR" = "11"
+    Info: Parameter "LPM_WIDTHS" = "1"
+    Info: Parameter "LPM_REPRESENTATION" = "UNSIGNED"
+    Info: Parameter "INPUT_A_IS_CONSTANT" = "NO"
+    Info: Parameter "INPUT_B_IS_CONSTANT" = "YES"
+    Info: Parameter "MAXIMIZE_SPEED" = "5"
+Info: Elaborated megafunction instantiation "conversaobin_dec:cbd|lpm_mult:Mult0|multcore:mult_core", which is child of megafunction instantiation "conversaobin_dec:cbd|lpm_mult:Mult0"
+Info: Elaborated megafunction instantiation "conversaobin_dec:cbd|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder", which is child of megafunction instantiation "conversaobin_dec:cbd|lpm_mult:Mult0"
+Info: Elaborated megafunction instantiation "conversaobin_dec:cbd|lpm_mult:Mult0|altshift:external_latency_ffs", which is child of megafunction instantiation "conversaobin_dec:cbd|lpm_mult:Mult0"
+Warning: Output pins are stuck at VCC or GND
+    Warning (13410): Pin "out[0]" is stuck at VCC
+Info: Timing-Driven Synthesis is running
+Info: 3 registers lost all their fanouts during netlist optimizations. The first 3 are displayed below.
+    Info: Register "teclado2:keyboard|state~10" lost all its fanouts during netlist optimizations.
+    Info: Register "teclado2:keyboard|state~11" lost all its fanouts during netlist optimizations.
+    Info: Register "teclado2:keyboard|state_anterior~4" lost all its fanouts during netlist optimizations.
+Info: Found the following redundant logic cells in design
+    Info (17048): Logic cell "conversaodec_bin:cdb|lpm_divide:Mod1|lpm_divide_5bm:auto_generated|sign_div_unsign_qlh:divider|alt_u_div_87f:divider|add_sub_15_result_int[0]~0"
+    Info (17048): Logic cell "conversaodec_bin:cdb|lpm_divide:Mod1|lpm_divide_5bm:auto_generated|sign_div_unsign_qlh:divider|alt_u_div_87f:divider|add_sub_6_result_int[0]~10"
+    Info (17048): Logic cell "conversaodec_bin:cdb|lpm_divide:Mod1|lpm_divide_5bm:auto_generated|sign_div_unsign_qlh:divider|alt_u_div_87f:divider|add_sub_7_result_int[0]~10"
+    Info (17048): Logic cell "conversaodec_bin:cdb|lpm_divide:Mod1|lpm_divide_5bm:auto_generated|sign_div_unsign_qlh:divider|alt_u_div_87f:divider|add_sub_8_result_int[0]~10"
+    Info (17048): Logic cell "conversaodec_bin:cdb|lpm_divide:Mod1|lpm_divide_5bm:auto_generated|sign_div_unsign_qlh:divider|alt_u_div_87f:divider|add_sub_9_result_int[0]~10"
+    Info (17048): Logic cell "conversaodec_bin:cdb|lpm_divide:Mod1|lpm_divide_5bm:auto_generated|sign_div_unsign_qlh:divider|alt_u_div_87f:divider|add_sub_10_result_int[0]~10"
+    Info (17048): Logic cell "conversaodec_bin:cdb|lpm_divide:Mod1|lpm_divide_5bm:auto_generated|sign_div_unsign_qlh:divider|alt_u_div_87f:divider|add_sub_11_result_int[0]~10"
+    Info (17048): Logic cell "conversaodec_bin:cdb|lpm_divide:Mod1|lpm_divide_5bm:auto_generated|sign_div_unsign_qlh:divider|alt_u_div_87f:divider|add_sub_12_result_int[0]~10"
+    Info (17048): Logic cell "conversaodec_bin:cdb|lpm_divide:Mod1|lpm_divide_5bm:auto_generated|sign_div_unsign_qlh:divider|alt_u_div_87f:divider|add_sub_13_result_int[0]~10"
+    Info (17048): Logic cell "conversaodec_bin:cdb|lpm_divide:Mod1|lpm_divide_5bm:auto_generated|sign_div_unsign_qlh:divider|alt_u_div_87f:divider|add_sub_14_result_int[0]~10"
+    Info (17048): Logic cell "conversaodec_bin:cdb|lpm_divide:Div1|lpm_divide_2jm:auto_generated|sign_div_unsign_qlh:divider|alt_u_div_87f:divider|add_sub_6_result_int[0]~10"
+    Info (17048): Logic cell "conversaodec_bin:cdb|lpm_divide:Div1|lpm_divide_2jm:auto_generated|sign_div_unsign_qlh:divider|alt_u_div_87f:divider|add_sub_7_result_int[0]~10"
+    Info (17048): Logic cell "conversaodec_bin:cdb|lpm_divide:Div1|lpm_divide_2jm:auto_generated|sign_div_unsign_qlh:divider|alt_u_div_87f:divider|add_sub_8_result_int[0]~10"
+    Info (17048): Logic cell "conversaodec_bin:cdb|lpm_divide:Div1|lpm_divide_2jm:auto_generated|sign_div_unsign_qlh:divider|alt_u_div_87f:divider|add_sub_9_result_int[0]~10"
+    Info (17048): Logic cell "conversaodec_bin:cdb|lpm_divide:Div1|lpm_divide_2jm:auto_generated|sign_div_unsign_qlh:divider|alt_u_div_87f:divider|add_sub_10_result_int[0]~10"
+    Info (17048): Logic cell "conversaodec_bin:cdb|lpm_divide:Div1|lpm_divide_2jm:auto_generated|sign_div_unsign_qlh:divider|alt_u_div_87f:divider|add_sub_11_result_int[0]~10"
+    Info (17048): Logic cell "conversaodec_bin:cdb|lpm_divide:Div1|lpm_divide_2jm:auto_generated|sign_div_unsign_qlh:divider|alt_u_div_87f:divider|add_sub_12_result_int[0]~10"
+    Info (17048): Logic cell "conversaodec_bin:cdb|lpm_divide:Div1|lpm_divide_2jm:auto_generated|sign_div_unsign_qlh:divider|alt_u_div_87f:divider|add_sub_13_result_int[0]~10"
+    Info (17048): Logic cell "conversaodec_bin:cdb|lpm_divide:Div1|lpm_divide_2jm:auto_generated|sign_div_unsign_qlh:divider|alt_u_div_87f:divider|add_sub_14_result_int[0]~10"
+    Info (17048): Logic cell "conversaodec_bin:cdb|lpm_divide:Mod2|lpm_divide_5bm:auto_generated|sign_div_unsign_qlh:divider|alt_u_div_87f:divider|add_sub_15_result_int[0]~0"
+    Info (17048): Logic cell "conversaodec_bin:cdb|lpm_divide:Mod2|lpm_divide_5bm:auto_generated|sign_div_unsign_qlh:divider|alt_u_div_87f:divider|add_sub_9_result_int[0]~10"
+    Info (17048): Logic cell "conversaodec_bin:cdb|lpm_divide:Mod2|lpm_divide_5bm:auto_generated|sign_div_unsign_qlh:divider|alt_u_div_87f:divider|add_sub_10_result_int[0]~10"
+    Info (17048): Logic cell "conversaodec_bin:cdb|lpm_divide:Mod2|lpm_divide_5bm:auto_generated|sign_div_unsign_qlh:divider|alt_u_div_87f:divider|add_sub_11_result_int[0]~10"
+    Info (17048): Logic cell "conversaodec_bin:cdb|lpm_divide:Mod2|lpm_divide_5bm:auto_generated|sign_div_unsign_qlh:divider|alt_u_div_87f:divider|add_sub_12_result_int[0]~10"
+    Info (17048): Logic cell "conversaodec_bin:cdb|lpm_divide:Mod2|lpm_divide_5bm:auto_generated|sign_div_unsign_qlh:divider|alt_u_div_87f:divider|add_sub_13_result_int[0]~10"
+    Info (17048): Logic cell "conversaodec_bin:cdb|lpm_divide:Mod2|lpm_divide_5bm:auto_generated|sign_div_unsign_qlh:divider|alt_u_div_87f:divider|add_sub_14_result_int[0]~10"
+    Info (17048): Logic cell "conversaodec_bin:cdb|lpm_divide:Div2|lpm_divide_2jm:auto_generated|sign_div_unsign_qlh:divider|alt_u_div_87f:divider|add_sub_9_result_int[0]~10"
+    Info (17048): Logic cell "conversaodec_bin:cdb|lpm_divide:Div2|lpm_divide_2jm:auto_generated|sign_div_unsign_qlh:divider|alt_u_div_87f:divider|add_sub_10_result_int[0]~10"
+    Info (17048): Logic cell "conversaodec_bin:cdb|lpm_divide:Div2|lpm_divide_2jm:auto_generated|sign_div_unsign_qlh:divider|alt_u_div_87f:divider|add_sub_11_result_int[0]~10"
+    Info (17048): Logic cell "conversaodec_bin:cdb|lpm_divide:Div2|lpm_divide_2jm:auto_generated|sign_div_unsign_qlh:divider|alt_u_div_87f:divider|add_sub_12_result_int[0]~10"
+    Info (17048): Logic cell "conversaodec_bin:cdb|lpm_divide:Div2|lpm_divide_2jm:auto_generated|sign_div_unsign_qlh:divider|alt_u_div_87f:divider|add_sub_13_result_int[0]~10"
+    Info (17048): Logic cell "conversaodec_bin:cdb|lpm_divide:Div2|lpm_divide_2jm:auto_generated|sign_div_unsign_qlh:divider|alt_u_div_87f:divider|add_sub_14_result_int[0]~10"
+    Info (17048): Logic cell "conversaodec_bin:cdb|lpm_divide:Mod3|lpm_divide_5bm:auto_generated|sign_div_unsign_qlh:divider|alt_u_div_87f:divider|add_sub_15_result_int[0]~0"
+    Info (17048): Logic cell "conversaodec_bin:cdb|lpm_divide:Mod3|lpm_divide_5bm:auto_generated|sign_div_unsign_qlh:divider|alt_u_div_87f:divider|add_sub_12_result_int[0]~10"
+    Info (17048): Logic cell "conversaodec_bin:cdb|lpm_divide:Mod3|lpm_divide_5bm:auto_generated|sign_div_unsign_qlh:divider|alt_u_div_87f:divider|add_sub_13_result_int[0]~10"
+    Info (17048): Logic cell "conversaodec_bin:cdb|lpm_divide:Mod3|lpm_divide_5bm:auto_generated|sign_div_unsign_qlh:divider|alt_u_div_87f:divider|add_sub_14_result_int[0]~10"
+Info: Generated suppressed messages file C:/Users/zsmn/Downloads/New folder/123.map.smsg
+Info: Implemented 1273 device resources after synthesis - the final resource count might be different
+    Info: Implemented 9 input pins
+    Info: Implemented 35 output pins
+    Info: Implemented 1229 logic cells
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 19 warnings
+    Info: Peak virtual memory: 269 megabytes
+    Info: Processing ended: Tue Dec 11 16:03:50 2018
+    Info: Elapsed time: 00:00:06
+    Info: Total CPU time (on all processors): 00:00:06
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in C:/Users/zsmn/Downloads/New folder/123.map.smsg.
+
+

@@ -1,0 +1,185 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'clk'
+Slack : -6.768
+TNS   : -413.275
+
+Type  : Slow 1200mV 85C Model Setup 'teclado2:keyboard|salve'
+Slack : -5.925
+TNS   : -69.864
+
+Type  : Slow 1200mV 85C Model Setup 'deg_clk:comb_13|d_clk'
+Slack : -1.875
+TNS   : -69.583
+
+Type  : Slow 1200mV 85C Model Setup 'pause'
+Slack : 0.108
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Setup 'reseta'
+Slack : 0.121
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'deg_clk:comb_13|d_clk'
+Slack : -0.302
+TNS   : -0.302
+
+Type  : Slow 1200mV 85C Model Hold 'teclado2:keyboard|salve'
+Slack : -0.276
+TNS   : -0.276
+
+Type  : Slow 1200mV 85C Model Hold 'clk'
+Slack : -0.225
+TNS   : -0.500
+
+Type  : Slow 1200mV 85C Model Hold 'pause'
+Slack : 0.343
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'reseta'
+Slack : 0.356
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk'
+Slack : -3.000
+TNS   : -207.315
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'pause'
+Slack : -3.000
+TNS   : -4.285
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'reseta'
+Slack : -3.000
+TNS   : -4.285
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'deg_clk:comb_13|d_clk'
+Slack : -1.285
+TNS   : -62.965
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'teclado2:keyboard|salve'
+Slack : 0.331
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Setup 'clk'
+Slack : -5.982
+TNS   : -364.419
+
+Type  : Slow 1200mV 0C Model Setup 'teclado2:keyboard|salve'
+Slack : -5.333
+TNS   : -63.741
+
+Type  : Slow 1200mV 0C Model Setup 'deg_clk:comb_13|d_clk'
+Slack : -1.647
+TNS   : -59.519
+
+Type  : Slow 1200mV 0C Model Setup 'pause'
+Slack : 0.205
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Setup 'reseta'
+Slack : 0.217
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'clk'
+Slack : -0.202
+TNS   : -0.420
+
+Type  : Slow 1200mV 0C Model Hold 'deg_clk:comb_13|d_clk'
+Slack : -0.173
+TNS   : -0.173
+
+Type  : Slow 1200mV 0C Model Hold 'teclado2:keyboard|salve'
+Slack : -0.133
+TNS   : -0.133
+
+Type  : Slow 1200mV 0C Model Hold 'pause'
+Slack : 0.306
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'reseta'
+Slack : 0.318
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk'
+Slack : -3.000
+TNS   : -207.315
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'pause'
+Slack : -3.000
+TNS   : -4.285
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'reseta'
+Slack : -3.000
+TNS   : -4.285
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'deg_clk:comb_13|d_clk'
+Slack : -1.285
+TNS   : -62.965
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'teclado2:keyboard|salve'
+Slack : 0.438
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'clk'
+Slack : -3.364
+TNS   : -156.646
+
+Type  : Fast 1200mV 0C Model Setup 'teclado2:keyboard|salve'
+Slack : -2.408
+TNS   : -26.902
+
+Type  : Fast 1200mV 0C Model Setup 'deg_clk:comb_13|d_clk'
+Slack : -0.423
+TNS   : -9.780
+
+Type  : Fast 1200mV 0C Model Setup 'pause'
+Slack : 0.569
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'reseta'
+Slack : 0.575
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'deg_clk:comb_13|d_clk'
+Slack : -0.307
+TNS   : -0.307
+
+Type  : Fast 1200mV 0C Model Hold 'clk'
+Slack : -0.282
+TNS   : -1.946
+
+Type  : Fast 1200mV 0C Model Hold 'teclado2:keyboard|salve'
+Slack : -0.148
+TNS   : -0.148
+
+Type  : Fast 1200mV 0C Model Hold 'pause'
+Slack : 0.151
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'reseta'
+Slack : 0.157
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk'
+Slack : -3.000
+TNS   : -171.414
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'pause'
+Slack : -3.000
+TNS   : -4.289
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'reseta'
+Slack : -3.000
+TNS   : -4.265
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'deg_clk:comb_13|d_clk'
+Slack : -1.000
+TNS   : -49.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'teclado2:keyboard|salve'
+Slack : 0.249
+TNS   : 0.000
+
+------------------------------------------------------------
